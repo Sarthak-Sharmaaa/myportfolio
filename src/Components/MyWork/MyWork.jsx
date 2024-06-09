@@ -6,6 +6,9 @@ import mywork_data from '../../assets/mywork_data'
 
 
 const MyWork = () => {
+  const handleImageClick = (url) => {
+    window.location.href = url;
+};
   return (
     <div  id='work' className='mywork'>
         <div className="mywork-title">
@@ -14,7 +17,8 @@ const MyWork = () => {
         </div>
         <div className="mywork-container">
         {mywork_data.map((work,index)=>{
-            return <img key={index} src={work.w_img} alt=""/>
+            return <img key={index} src={work.w_img} alt=""
+            onClick={() => handleImageClick(work.url)}/>
         })}
         </div>
        <div className="mywork-showmore">
